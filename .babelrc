@@ -1,0 +1,25 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "store": "./store",
+          "components": "./components",
+          "config": "./config",
+          "hooks": "./hooks",
+          "requests": "./requests"
+        }
+      }
+    ]
+  ],
+  "extensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx"
+  ]
+}
