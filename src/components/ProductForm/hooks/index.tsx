@@ -21,12 +21,10 @@ export const useProductForm = (product?: TProduct) => {
     | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target
-    if (value.length) {
       setFormValues({
         ...formValues,
         [id]: value,
       })
-    }
   }
   const submitFunc = product ? updateOneProduct : addNewProduct
 
