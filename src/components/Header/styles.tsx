@@ -16,6 +16,10 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   font-size: 36px; 
+
+  @media (max-width: 768px) {
+    font-size: 18px; 
+  }
 `
 
 export const IconBlock = styled.div`
@@ -32,8 +36,12 @@ export const CartIcon = styled.div`
 `
 
 export const Total = styled.p`
-  font-size: 28px;
+  font-size: 24px;
   color: ${color.orange};
   font-weight: bold;
   margin-right: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 18px; 
+  }
 `
