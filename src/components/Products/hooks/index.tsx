@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 
 import { useAppDispatch, RootState } from "store"
 import { getProductsList } from "store/products"
+import { getUser } from "store/userType"
 
 export const useProducts = () => {
 
@@ -15,6 +16,7 @@ export const useProducts = () => {
   const user = useSelector((state: RootState) => state.userType.userType)
 
   useEffect(() => {
+    dispatch(getUser())
     dispatch(getProductsList())
   }, [dispatch])
 

@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 4px;
+  border-bottom: 1px dashed ${color.darkGray};
 `
 export const Price = styled.p`
   font-size: 16px;

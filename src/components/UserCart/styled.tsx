@@ -9,6 +9,11 @@ export const Wrapper = styled.div`
   background-color: ${color.lightGrey};
   border: 1px solid #ccc;
   border-radius: 10px;
+  min-width: 500px;
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
 `
 
 export const Title = styled.h3`
