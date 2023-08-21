@@ -26,6 +26,8 @@ export const ButtonBlock = styled.button<TButtonBlock>`
   
   ${({ isDisabled }) => (isDisabled
     ? `cursor: none;
+       background-color: ${color.darkGrayOpacity};
+       color: ${color.darkGray}
     `
     : '')}
   
