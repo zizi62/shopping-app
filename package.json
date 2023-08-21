@@ -1,7 +1,7 @@
 {
   "name": "my-ts-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://zizi62.github.io/shopping-app",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
