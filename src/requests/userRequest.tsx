@@ -1,14 +1,14 @@
-import { TUserType } from "store/userType";
+import { TUserType } from "store/userType"
 
 export const saveUserType = (userType: TUserType) => {
-  localStorage.setItem('userType', JSON.stringify(userType));
+  localStorage.setItem('userType', JSON.stringify(userType))
 }
 
 export const getUserType = () => {
-  const userType = localStorage.getItem('userType');
+  const userType = localStorage.getItem('userType')
   return userType && JSON.parse(userType)
 }
 
 export const clearUserType = () => {
-  localStorage.removeItem('userType');
+  localStorage.removeItem('userType')
 }

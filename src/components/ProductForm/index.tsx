@@ -1,5 +1,5 @@
-import Button from 'components/Button';
-import { TProduct } from 'store/products/productsTypes';
+import Button from 'components/Button'
+import { TProduct } from 'store/products/productsTypes'
 
 import { useProductForm } from './hooks'
 

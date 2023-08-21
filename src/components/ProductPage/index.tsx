@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom'
 
-import BackButton from 'components/BackButton';
-import Button from 'components/Button';
-import Loader from 'components/Loader';
-import Modal from 'components/Modal';
-import ProductForm from 'components/ProductForm';
-import useEdit from 'hooks/useEdit';
+import BackButton from 'components/BackButton'
+import Button from 'components/Button'
+import Loader from 'components/Loader'
+import Modal from 'components/Modal'
+import ProductForm from 'components/ProductForm'
+import useEdit from 'hooks/useEdit'
 
-import { useProductPage } from './hooks';
+import { useProductPage } from './hooks'
 import {
   Wrapper,
   ProductBlock,
@@ -16,10 +16,10 @@ import {
   Description,
   Price,
   ButtonsBlock
-} from './styles';
+} from './styles'
 
 const ProductPage = () => {
-  const { id } = useParams();
+  const { id } = useParams()
 
   const {
     isFetching,

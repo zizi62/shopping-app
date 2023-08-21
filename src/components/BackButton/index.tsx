@@ -4,7 +4,7 @@ import { FaBackspace } from 'react-icons/fa'
 import { ButtonBlock } from './styles'
 
 const BackButton = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const onClick = () => navigate(-1)
 

@@ -1,18 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../../../store';
-import { administrator, noImg } from '../../../../config';
-import { deleteOneProduct, getProductsList } from '../../../../store/products';
-import { addCartItem } from '../../../../store/userCart';
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-import { TProduct } from '../../../../store/products/productsTypes';
+import { administrator, noImg } from 'config'
+import { useAppDispatch, RootState } from 'store'
+import { deleteOneProduct, getProductsList } from 'store/products'
+import { TProduct } from 'store/products/productsTypes'
+import { addCartItem } from 'store/userCart'
 
 export const useProduct = (product: TProduct) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
-  const handleClick = () => navigate(`${product.id}`);
-  
+  const handleClick = () => navigate(`${product.id}`)
+
   const user = useSelector((state: RootState) => state.userType.userType)
 
   const isAdministrator = user === administrator

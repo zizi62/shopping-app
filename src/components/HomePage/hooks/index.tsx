@@ -13,7 +13,7 @@ export const useHomePage = () => {
     dispatch(getUser())
   }, [dispatch])
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const adminClick = () => {
     dispatch(saveUser(administrator))

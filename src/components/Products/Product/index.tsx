@@ -1,18 +1,22 @@
-
 import { Link } from 'react-router-dom'
-import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
-import { MdFindInPage } from 'react-icons/md';
+import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
+import { MdFindInPage } from 'react-icons/md'
+import { TProduct } from 'store/products/productsTypes'
+import Button from 'components/Button'
+import Modal from 'components/Modal'
+import ProductForm from 'components/ProductForm'
+import useEdit from 'hooks/useEdit'
 
-import { TProduct } from '../../../store/products/productsTypes'
-import Button from '../../Button';
-
-import { ProductImg, Wrapper, Description, Title, Price, IconsBlock, ButtonsBlock } from './styles'
-
-import Modal from '../../Modal';
-import useEdit from '../../../hooks/useEdit';
-
-import ProductForm from '../../ProductForm';
-import { useProduct } from './hooks';
+import { useProduct } from './hooks'
+import {
+  Wrapper,
+  IconsBlock,
+  ProductImg,
+  Title,
+  Description,
+  Price,
+  ButtonsBlock
+} from './styles'
 
 type TProductProps = {
   product: TProduct

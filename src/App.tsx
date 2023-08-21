@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom";
-import './App.css';
-import Layout from "./components/Layout";
-import ProductPage from "./components/ProductPage";
-import Products from "./components/Products";
-import Home from "./components/HomePage";
-import './fierbase';
+import { Routes, Route } from "react-router-dom"
+import './App.css'
+import Layout from "./components/Layout"
+import ProductPage from "./components/ProductPage"
+import Products from "./components/Products"
+import Home from "./components/HomePage"
+import './fierbase'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </Route>
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

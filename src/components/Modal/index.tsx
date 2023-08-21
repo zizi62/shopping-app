@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import ReactDOM from 'react-dom'
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai'
 
-import { CloseButton,  ModalContainer, ModalWindow } from './styles'
+import { CloseButton, ModalContainer, ModalWindow } from './styles'
 
 type Props = {
   children: ReactNode,
@@ -26,7 +26,7 @@ const Modal = ({
       <ModalContainer>
         <ModalWindow>
           <CloseButton onClick={close} >
-            <AiOutlineClose size={18} cursor={'pointer'}/>
+            <AiOutlineClose size={18} cursor={'pointer'} />
           </CloseButton>
           {children}
         </ModalWindow>

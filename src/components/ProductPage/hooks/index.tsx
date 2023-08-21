@@ -9,7 +9,7 @@ import { addCartItem } from 'store/userCart'
 
 export const useProductPage = (id: string) => {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const product = useSelector((state: RootState) => state.productsList.product)
   const isFetching = useSelector((state: RootState) => state.productsList.isFetching)

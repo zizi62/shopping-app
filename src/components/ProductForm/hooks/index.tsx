@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { TNewProduct, TProduct } from 'store/products/productsTypes';
-import { updateOneProduct, addNewProduct, getProduct, getProductsList } from 'store/products';
-import { useAppDispatch } from 'store/index';
-import { defaultValues } from '../config';
+import { TNewProduct, TProduct } from 'store/products/productsTypes'
+import { updateOneProduct, addNewProduct, getProduct, getProductsList } from 'store/products'
+import { useAppDispatch } from 'store/index'
+import { defaultValues } from '../config'
 
 export const useProductForm = (product?: TProduct) => {
 

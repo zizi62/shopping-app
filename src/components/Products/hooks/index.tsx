@@ -1,15 +1,13 @@
-import { administrator } from "config/index";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { administrator } from "config/index"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
 
-import { useAppDispatch, RootState } from "store";
-import { getProductsList } from "store/products";
+import { useAppDispatch, RootState } from "store"
+import { getProductsList } from "store/products"
 
 export const useProducts = () => {
 
   const dispatch = useAppDispatch()
-  const navigate = useNavigate();
 
   const products = useSelector((state: RootState) => state.productsList.products)
   const isFetching = useSelector((state: RootState) => state.productsList.isFetching)
@@ -17,9 +15,8 @@ export const useProducts = () => {
   const user = useSelector((state: RootState) => state.userType.userType)
 
   useEffect(() => {
-    if (!user) navigate('/')
     dispatch(getProductsList())
-  }, [dispatch, navigate, user])
+  }, [dispatch])
 
   const isAdministrator = user === administrator
 

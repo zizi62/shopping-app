@@ -24,7 +24,7 @@ export const useUserCart = () => {
   const total: number = items.length > 0
     // @ts-expect-error: Unreachable code error
     ? items.reduce((sum: number, currentValue: TItem) => {
-      return sum + currentValue.price * currentValue.amount;
+      return sum + currentValue.price * currentValue.amount
     }, 0)
     : 0
 
