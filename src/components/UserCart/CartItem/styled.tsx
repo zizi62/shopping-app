@@ -37,3 +37,10 @@ export const CustomLink = styled(Link)`
     color: ${color.darkGray};
   }
 `
+export const Availability = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  color: ${color.warning};
+  margin-right: 10px;
+
+`

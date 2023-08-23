@@ -3,6 +3,7 @@ export type TItem = {
 	title: string,
 	price: number,
 	amount: number,
+	availability?: string
 }
 
 export type TUserCartState = {

@@ -20,6 +20,3 @@ export type TProductsState = {
 	isError: boolean,
 	isFetching: boolean,
 }
-
-
-

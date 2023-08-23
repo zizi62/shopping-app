@@ -15,7 +15,7 @@ const initialState: TUserCartState = {
 	items: [],
 	isFetching: false,
 	isError: false,
-	total:0,
+	total: 0,
 }
 
 export const getCartItems = createAsyncThunk(
@@ -66,8 +66,11 @@ const userCartSlice = createSlice({
 	name: 'userCart',
 	initialState,
 	reducers: {
-		setTotal(state, action: PayloadAction<{ total: number}>) {
+		setTotal(state, action: PayloadAction<{ total: number }>) {
 			state.total = action.payload.total
+		},
+		clearCart(state) {
+			state.items = []
 		},
 	},
 	extraReducers: (builder) => {
@@ -86,7 +89,7 @@ const userCartSlice = createSlice({
 	}
 })
 
-export const {setTotal} = userCartSlice.actions
+export const { setTotal, clearCart } = userCartSlice.actions
 
 export default userCartSlice.reducer
 

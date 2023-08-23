@@ -27,7 +27,7 @@ const UserCart = () => {
       <Total>
         Total: {total}$.
       </Total>
-      {total > 0 &&
+      {items.length > 0 &&
         <Button
           onClick={deleteAllItems}
           title='Clear cart'

@@ -1,4 +1,6 @@
 import { administrator } from 'config'
+import { getCartTotal } from 'helpers/getCartTotal'
+import { getUpdatedCartItems } from 'helpers/getUpdatedCartItems'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
@@ -9,22 +11,20 @@ export const useHeader = () => {
   const dispatch = useAppDispatch()
   const [isCartOpen, setCartOpen] = useState(false)
 
-  useEffect(() => {
-    dispatch(getCartItems())
-  }, [dispatch])
-
   const user = useSelector((state: RootState) => state.userType.userType)
-
   const items = useSelector((state: RootState) => state.userCart.items) || []
-
-  const total: number = items.length > 0
-    // @ts-expect-error: Unreachable code error
-    ? items.reduce((sum: number, currentValue: TItem) => {
-      return sum + currentValue.price * currentValue.amount
-    }, 0)
-    : 0
+  const products = useSelector((state: RootState) => state.productsList.products)
 
   const isAdministrator = user === administrator
+
+  useEffect(() => {
+    if (isAdministrator) return
+    dispatch(getCartItems())
+  }, [dispatch, isAdministrator, products])
+
+  const updatedItems = getUpdatedCartItems(items, products)
+
+  const total = getCartTotal(updatedItems)
 
   const openCart = () => setCartOpen(true)
   const closeCart = () => setCartOpen(false)

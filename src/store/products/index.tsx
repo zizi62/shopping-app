@@ -67,7 +67,14 @@ export const updateOneProduct = createAsyncThunk(
 const ProductsSlice = createSlice({
 	name: 'products',
 	initialState,
-	reducers: {},
+	reducers: {
+		clearProducts(state) {
+			state.products = []
+		},
+		clearProduct(state) {
+			state.product = null
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(getProductsList.pending, (state) => {
@@ -95,7 +102,6 @@ const ProductsSlice = createSlice({
 			})
 		builder
 			.addCase(getProduct.pending, (state) => {
-				state.product = null
 				state.isFetching = true
 			})
 			.addCase(getProduct.fulfilled, (state, action) => {
@@ -110,6 +116,7 @@ const ProductsSlice = createSlice({
 			})
 		builder
 			.addCase(deleteOneProduct.pending, (state) => {
+				state.isError = false
 				state.isFetching = true
 			})
 			.addCase(deleteOneProduct.fulfilled, (state) => {
@@ -119,11 +126,24 @@ const ProductsSlice = createSlice({
 			.addCase(deleteOneProduct.rejected, (state) => {
 				state.isFetching = false
 				state.isError = true
-			})
+			}),
+			builder
+				.addCase(updateOneProduct.pending, (state) => {
+					state.isFetching = true
+				})
+				.addCase(updateOneProduct.fulfilled, (state, action) => {
+					state.isError = false
+					state.isFetching = false
+					state.product = action.payload
+				})
+				.addCase(updateOneProduct.rejected, (state) => {
+					state.isFetching = false
+					state.isError = true
+				})
 	}
 })
 
-// export const { } = ProductsSlice.actions
+export const { clearProduct, clearProducts } = ProductsSlice.actions
 
 export default ProductsSlice.reducer
 

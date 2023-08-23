@@ -3,25 +3,30 @@ import { useNavigate } from 'react-router-dom'
 
 import { administrator, customer } from 'config'
 import { useAppDispatch } from 'store/index'
-import { getUser, saveUser } from 'store/userType'
+import { deleteUser, saveUser } from 'store/userType'
+import { clearCart } from 'store/userCart'
+import { clearProducts } from 'store/products'
 
 export const useHomePage = () => {
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(getUser())
+    dispatch(clearCart())
+    dispatch(deleteUser())
+    dispatch(clearProducts())
   }, [dispatch])
 
   const navigate = useNavigate()
 
   const adminClick = () => {
     dispatch(saveUser(administrator))
-    navigate('products')
+      .then(() => navigate('products'))
   }
+
   const customerClick = () => {
     dispatch(saveUser(customer))
-    navigate('products')
+      .then(() => navigate('products'))
   }
 
   return {

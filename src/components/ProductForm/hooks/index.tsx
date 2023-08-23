@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { TNewProduct, TProduct } from 'store/products/productsTypes'
-import { updateOneProduct, addNewProduct, getProduct, getProductsList } from 'store/products'
+import { updateOneProduct, addNewProduct, getProductsList } from 'store/products'
 import { useAppDispatch } from 'store/index'
 import { defaultValues } from '../config'
 
@@ -21,10 +21,10 @@ export const useProductForm = (product?: TProduct) => {
     | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target
-      setFormValues({
-        ...formValues,
-        [id]: value,
-      })
+    setFormValues({
+      ...formValues,
+      [id]: value,
+    })
   }
   const submitFunc = product ? updateOneProduct : addNewProduct
 
@@ -37,10 +37,7 @@ export const useProductForm = (product?: TProduct) => {
     if (!isFieldsFilled) return
     setFormValues(defaultValues)
     dispatch(submitFunc(formValues))
-      .then(() => {
-        if (product) dispatch(getProduct(product.id))
-        dispatch(getProductsList())
-      })
+      .then(() => dispatch(getProductsList()))
   }
 
   return {

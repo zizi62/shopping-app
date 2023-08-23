@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { useAppDispatch, RootState } from 'store'
-import { getProduct, deleteOneProduct, getProductsList } from 'store/products'
+import { getProduct, deleteOneProduct, getProductsList, clearProducts } from 'store/products'
 import { addCartItem } from 'store/userCart'
 
 export const useProductPage = (id: string) => {
@@ -16,7 +16,9 @@ export const useProductPage = (id: string) => {
   const user = useSelector((state: RootState) => state.userType.userType)
 
   useEffect(() => {
+    if (id === product?.id) return
     if (!user) navigate('/')
+    clearProducts()
     dispatch(getProduct(id))
   }, [dispatch, id])
 
